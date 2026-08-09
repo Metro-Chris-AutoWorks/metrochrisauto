@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://metrochrisauto.co.za/sitemap.xml
