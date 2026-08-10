@@ -9,3 +9,5 @@ Website: https://metrochrisauto.co.za
 Full-service vehicle repairs, diagnostics and mechanical maintenance.
 
 Real workshop. Reliable work.
+
+Website maintained through GitHub and deployed via Netlify.
