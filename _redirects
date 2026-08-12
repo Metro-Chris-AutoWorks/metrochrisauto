@@ -1,0 +1,4 @@
+# Force all traffic onto the canonical HTTPS domain
+http://metrochrisauto.co.za/* https://metrochrisauto.co.za/:splat 301!
+http://www.metrochrisauto.co.za/* https://metrochrisauto.co.za/:splat 301!
+https://www.metrochrisauto.co.za/* https://metrochrisauto.co.za/:splat 301!
