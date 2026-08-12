@@ -2,10 +2,7 @@
 .hero-grid { width: min(1500px, 100%); grid-template-columns: minmax(0, .82fr) minmax(620px, 1.18fr); gap: clamp(24px, 3.5vw, 58px); }
 .hero-copy { position: relative; z-index: 3; }
 .hero-media { min-width: 0; margin: -12px -7vw -28px 0; }
-.hero-cutout-stage { --rx: 0deg; --ry: 0deg; position: relative; min-height: 670px; display: flex; align-items: flex-end; justify-content: center; isolation: isolate; transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .16s ease-out; }
-.hero-cutout-shape { position: absolute; z-index: -1; inset: 9% 0 2% 15%; background: linear-gradient(145deg, #ff7a28 0%, var(--orange) 54%, #d53c09 100%); clip-path: polygon(22% 0, 86% 0, 100% 22%, 100% 79%, 85% 100%, 11% 100%, 0 81%, 0 25%); box-shadow: 0 32px 90px rgba(255,90,31,.22); }
-.hero-cutout-shape::before { content: "MCA"; position: absolute; right: 4%; top: 3%; color: rgba(255,255,255,.14); font-size: clamp(72px, 7vw, 124px); line-height: 1; font-weight: 900; letter-spacing: -.08em; }
-.hero-cutout-shape::after { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(255,255,255,.18); clip-path: inherit; }
+.hero-cutout-stage { --rx: 0deg; --ry: 0deg; position: relative; min-height: 670px; display: flex; align-items: flex-end; justify-content: center; transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .16s ease-out; }
 .hero-cutout { position: relative; z-index: 2; width: min(112%, 930px); max-width: none; height: auto; display: block; filter: drop-shadow(0 28px 30px rgba(0,0,0,.25)); transform: translate(1%, 1.5%); }
 .hero-cutout-badge { position: absolute; z-index: 4; left: 8%; bottom: 5%; padding: 13px 16px 14px; background: rgba(8,10,8,.9); border-left: 4px solid white; box-shadow: 0 16px 36px rgba(0,0,0,.26); }
 .hero-cutout-badge small { display: block; color: #c5c8c1; font-size: 9px; font-weight: 900; letter-spacing: .12em; }
@@ -53,7 +50,6 @@
 @media (max-width: 780px) {
   .hero-media { width: 108%; margin: -12px -4% -20px; }
   .hero-cutout-stage { min-height: 520px; }
-  .hero-cutout-shape { inset: 8% 2% 2% 10%; }
   .hero-cutout { width: min(110%, 720px); }
   .hero-cutout-badge { left: 6%; bottom: 4%; }
   .location-guide { min-height: 0; box-shadow: 10px 10px 0 var(--orange), var(--shadow); }
@@ -67,7 +63,6 @@
 
 @media (max-width: 480px) {
   .hero-cutout-stage { min-height: 420px; }
-  .hero-cutout-shape { inset: 11% 0 2% 6%; }
   .hero-cutout { width: 116%; transform: translate(3%, 1.5%); }
   .hero-cutout-badge { left: 3%; bottom: 2%; padding: 10px 12px; }
   .hero-cutout-badge small { font-size: 7px; }
