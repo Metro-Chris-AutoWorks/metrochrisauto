@@ -1,50 +1,48 @@
 /* V2 preview refinements: Musina Heat & Steel hero, daylight locator, QR conversion card */
+.site-header {
+  left: 0;
+  width: 100%;
+  padding-inline: max(24px, calc((100vw - var(--max)) / 2));
+  transform: none;
+  background: rgba(6,8,7,.94);
+  border-bottom-color: rgba(255,255,255,.12);
+  box-shadow: 0 14px 38px rgba(0,0,0,.22);
+  backdrop-filter: blur(12px);
+}
 .hero {
   isolation: isolate;
   background:
-    linear-gradient(90deg, rgba(5,7,6,.98) 0%, rgba(8,10,8,.95) 37%, rgba(23,18,13,.82) 68%, rgba(61,31,14,.58) 100%),
-    radial-gradient(ellipse at 84% 23%, rgba(255,143,60,.34), transparent 34%),
-    radial-gradient(ellipse at 72% 100%, rgba(255,90,31,.2), transparent 48%),
+    linear-gradient(90deg, rgba(4,6,5,.72) 0%, rgba(5,7,6,.52) 34%, rgba(24,16,10,.12) 66%, rgba(45,23,12,.08) 100%),
+    url("assets/images/musina-heat-steel-bg.webp") center / cover no-repeat,
     #080a08;
 }
 .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   z-index: -2;
-  width: 68vw;
-  height: 74vw;
-  min-width: 760px;
-  min-height: 760px;
-  right: -18vw;
-  top: -34vw;
-  border-radius: 42%;
   background:
-    repeating-linear-gradient(103deg, transparent 0 58px, rgba(255,190,117,.08) 59px 63px, transparent 64px 120px),
-    radial-gradient(circle at 48% 52%, rgba(255,108,38,.32), rgba(105,53,22,.14) 38%, transparent 70%);
-  filter: blur(1px);
-  transform: rotate(-8deg);
+    linear-gradient(90deg, rgba(3,5,4,.76) 0%, rgba(3,5,4,.3) 39%, transparent 65%),
+    linear-gradient(0deg, rgba(3,5,4,.36), transparent 38%);
+  pointer-events: none;
 }
 .hero::after {
   content: "";
   position: absolute;
   z-index: -1;
-  top: 17%;
-  right: -5%;
-  width: 61%;
-  height: 72%;
+  inset: 0;
   pointer-events: none;
-  clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%, 9% 63%);
   background:
-    linear-gradient(118deg, rgba(255,255,255,.05), transparent 24%),
-    repeating-linear-gradient(0deg, rgba(255,255,255,.026) 0 1px, transparent 1px 7px),
-    linear-gradient(145deg, rgba(52,56,52,.68), rgba(18,20,18,.42) 48%, rgba(132,61,25,.18));
-  box-shadow: inset 1px 0 rgba(255,173,100,.18);
+    radial-gradient(ellipse at 78% 40%, rgba(255,128,47,.13), transparent 37%),
+    radial-gradient(ellipse at 73% 100%, rgba(0,0,0,.2), transparent 48%);
 }
 .hero-grid { width: min(1500px, 100%); grid-template-columns: minmax(0, .82fr) minmax(620px, 1.18fr); gap: clamp(24px, 3.5vw, 58px); }
 .hero-copy { position: relative; z-index: 3; }
 .hero-media { min-width: 0; margin: -12px -7vw -28px 0; }
-.hero-cutout-stage { --rx: 0deg; --ry: 0deg; position: relative; min-height: 670px; display: flex; align-items: flex-end; justify-content: center; transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)); transition: transform .16s ease-out; }
+.hero-cutout-stage { position: relative; min-height: 670px; display: flex; align-items: flex-end; justify-content: center; transform: none; }
 .hero-cutout-stage::before { content: ""; position: absolute; z-index: 0; left: 7%; right: -4%; bottom: 2%; height: 39%; border-radius: 50%; background: radial-gradient(ellipse, rgba(255,108,38,.22), rgba(37,21,13,.24) 42%, transparent 70%); filter: blur(24px); transform: scaleX(1.08); }
 .hero-cutout-stage::after { content: ""; position: absolute; z-index: 1; left: 12%; right: 4%; bottom: 0; height: 10%; border-radius: 50%; background: rgba(0,0,0,.48); filter: blur(20px); }
-.hero-cutout { position: relative; z-index: 2; width: min(112%, 930px); max-width: none; height: auto; display: block; filter: drop-shadow(0 28px 30px rgba(0,0,0,.42)) drop-shadow(12px -4px 18px rgba(255,117,44,.08)); transform: translate(1%, 1.5%); }
+.hero-cutout { position: relative; z-index: 2; width: min(112%, 930px); max-width: none; height: auto; display: block; clip-path: inset(2px); filter: drop-shadow(0 28px 30px rgba(0,0,0,.42)) drop-shadow(12px -4px 18px rgba(255,117,44,.08)); transform: translate(1%, 1.5%); }
 .hero-cutout-badge { position: absolute; z-index: 4; left: 8%; bottom: 5%; padding: 13px 16px 14px; background: rgba(8,10,8,.9); border-left: 4px solid var(--orange); box-shadow: 0 16px 36px rgba(0,0,0,.26); }
 .hero-cutout-badge small { display: block; color: #c5c8c1; font-size: 9px; font-weight: 900; letter-spacing: .12em; }
 .hero-cutout-badge strong { display: block; margin-top: 5px; color: white; font-size: clamp(18px, 1.6vw, 25px); line-height: 1; letter-spacing: -.035em; }
@@ -89,8 +87,9 @@
 }
 
 @media (max-width: 780px) {
-  .hero::after { top: 43%; right: -24%; width: 132%; height: 50%; opacity: .7; }
-  .hero::before { right: -85vw; top: 28%; }
+  .site-header { width: 100%; padding-inline: 16px; }
+  .hero { background-position: 58% center; }
+  .hero::before { background: linear-gradient(180deg, rgba(3,5,4,.76) 0%, rgba(3,5,4,.48) 40%, rgba(3,5,4,.12) 68%, rgba(3,5,4,.34) 100%); }
   .hero-media { width: 108%; margin: -12px -4% -20px; }
   .hero-cutout-stage { min-height: 520px; }
   .hero-cutout { width: min(110%, 720px); }
