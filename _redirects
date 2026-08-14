@@ -4,4 +4,4 @@ http://www.metrochrisauto.co.za/* https://metrochrisauto.co.za/:splat 301!
 https://www.metrochrisauto.co.za/* https://metrochrisauto.co.za/:splat 301!
 
 # Serve the approved V2 experience as the production homepage
-/ /v2-preview.html 200
+/ /v2-preview.html 200!
